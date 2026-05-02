@@ -1,0 +1,165 @@
+/* CSS Variables for Themes */
+
+:root[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --nav-bg: #1e293b;
+    --nav-text: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --primary-color: #38bdf8;
+    --danger-color: #f87171;
+    --muted-color: #94a3b8;
+    --modal-bg: #1e293b;
+    --modal-text: #f8fafc;
+    --input-bg: #0f172a;
+    --input-border: #334155;
+    --input-text: #f8fafc;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f1f5f9;
+    --text-color: #0f172a;
+    --nav-bg: #ffffff;
+    --nav-text: #0f172a;
+    --card-bg: #ffffff;
+    --card-border: #cbd5e1;
+    --primary-color: #0ea5e9;
+    --danger-color: #ef4444;
+    --muted-color: #64748b;
+    --modal-bg: #ffffff;
+    --modal-text: #0f172a;
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+    --input-text: #0f172a;
+}
+
+:root[data-theme="nje"] {
+    --bg-color: #f8f9fa;
+    --text-color: #003366; /* NJE Blue */
+    --nav-bg: #003366;
+    --nav-text: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #ffd700; /* NJE Yellow/Gold */
+    --primary-color: #003366;
+    --danger-color: #dc3545;
+    --muted-color: #495057;
+    --modal-bg: #ffffff;
+    --modal-text: #003366;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --input-text: #003366;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.navbar-brand, .nav-link, .navbar-text {
+    color: var(--nav-text) !important;
+}
+
+.main-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+/* Grid for Counters */
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-actions {
+    opacity: 1;
+}
+
+.countdown {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 15px 0;
+    font-variant-numeric: tabular-nums;
+    color: var(--danger-color);
+}
+
+.status {
+    font-size: 0.9rem;
+    color: var(--muted-color);
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+/* Modal Styling overrides for themes */
+.modal-content {
+    background-color: var(--modal-bg);
+    color: var(--modal-text);
+}
+
+.modal-header {
+    border-bottom-color: var(--card-border);
+}
+
+.modal-footer {
+    border-top-color: var(--card-border);
+}
+
+.form-control, .form-select {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--input-text);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+}
+
+/* Button overrides for NJE theme */
+:root[data-theme="nje"] .btn-primary {
+    background-color: #003366;
+    border-color: #003366;
+    color: #fff;
+}
+:root[data-theme="nje"] .btn-primary:hover {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #003366;
+}

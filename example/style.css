@@ -1,0 +1,56 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    color: #38bdf8;
+}
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.countdown {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-variant-numeric: tabular-nums;
+    color: #f87171; /* Stresszes piros */
+}
+
+.status {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-style: italic;
+}
