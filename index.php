@@ -32,6 +32,9 @@ if (!isset($_SESSION['user_id'])) {
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php">Számlálók</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.php">Naptár</a>
+                    </li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <select class="form-select form-select-sm me-3" id="themeSelector">
